@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM docker.io/nginx:alpine
 
 VOLUME /var/www/html
 COPY nginx.conf /etc/nginx/nginx.conf

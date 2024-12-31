@@ -1,5 +1,7 @@
 # Nextcloud NGINX Configuration for Kubernetes
 
+**Imprortant for multiarch builds:** You need to install qemu-user-static qemu-user-static-binfmt in addition to podman.
+
 ## Backup
 
 ### Database
