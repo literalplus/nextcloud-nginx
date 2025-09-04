@@ -9,10 +9,19 @@ set -o xtrace
 
 IMG="images.lit.plus/nextcloud-nginx:latest"
 
-if podman image exists $IMG; then
-  podman image rm $IMG
-fi
 
-podman manifest create $IMG
-podman build --platform linux/amd64,linux/arm64 --manifest $IMG .
-podman manifest push $IMG
+function build_and_push () {
+    if podman manifest exists $1; then
+        podman manifest rm $1
+    fi
+
+    if podman image exists $1; then
+        podman image rm $1
+    fi
+
+    podman manifest create $1
+    podman build --platform linux/amd64,linux/arm64 --manifest $1 .
+    podman manifest push $1
+}
+
+build_and_push "images.lit.plus/nextcloud-nginx:latest"
