@@ -24,4 +24,4 @@ function build_and_push () {
     podman manifest push $1
 }
 
-build_and_push "images.lit.plus/nextcloud-nginx:latest"
+build_and_push "$IMG"
