@@ -7,7 +7,7 @@ set -o xtrace
 # IMPORTANT: For this to work, you need to
 #   pacman -Syu qemu-user-static qemu-user-static-binfmt
 
-IMG="images.lit.plus/nextcloud-nginx:latest"
+IMG="registry.lit.plus/nextcloud-nginx:latest"
 
 
 function build_and_push () {
